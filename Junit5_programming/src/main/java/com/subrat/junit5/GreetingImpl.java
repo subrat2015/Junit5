@@ -2,14 +2,11 @@ package com.subrat.junit5;
 
 public class GreetingImpl implements Greeting {
 
+    private  GreetingService  greetingService;
+
     @Override
     public String greet(String name) {
 
-        if (name == null || name.length() == 0) {
-            throw new IllegalArgumentException();
-        }
-
-        return "Hello " + name;
+        return greetingService.greet(name);
     }
-
 }
